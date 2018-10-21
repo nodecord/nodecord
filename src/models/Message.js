@@ -7,13 +7,11 @@ const { cleanMessage } = require('../util/MessageUtil');
 
 module.exports = class Message {
     constructor(obj, addons) {
-        let cleaned = await cleanMessage(obj.content);
-        
-        for (const [key, value] of Object.entries(src)) {
+        for (const [key, value] of Object.entries(obj)) {
             if (!blacklisted.hasOwnProperty(key)) this[key] = value;
         }
 
-        this.cleanedContent = cleaned;
+        this.cleanedContent = cleanMessage(obj.content);
         this.guild = addons.guild;
         this.channel = addons.guild;
     }

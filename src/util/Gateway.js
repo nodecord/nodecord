@@ -4,12 +4,15 @@ exports.getGatewayBot = async (token) => {
     if (!token || typeof(token) != 'string' || token == '') throw new Error(`INVALID_OR_NO_TOKEN`);
 
     try {
-        const { body } = await p({
+        const b = await p({
             url: 'https://discordapp.com/api/gateway/bot',
-            parse: 'json'
+            parse: 'json',
+            headers: {
+                'Authorization': `Bot ${token}`
+            }
         });
 
-        return body.url;
+        return b.body.url;
     } catch(err) {
         throw new Error(err);
     }

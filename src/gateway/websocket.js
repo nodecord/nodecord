@@ -1,7 +1,7 @@
 const ws = require('ws');
 const { getGatewayBot } = require('../util/Gateway');
 
-module.exports = (client) => {
+module.exports = async (client) => {
     const gatewayUrl = await getGatewayBot(client.token);
     client.ws.gateway = {
         url: gatewayUrl,
@@ -13,14 +13,14 @@ module.exports = (client) => {
     socket.on('message', (incoming) => {
         const d = JSON.parse(incoming) || incoming;
 
-        client.ws.gateway.heartbeat = {
-            interval: d.d.heartbeat_interval,
-            last: null,
-            recieved: true
-        };
-
         switch(d.op) {
             case 10: /* hello */
+                client.ws.gateway.heartbeat = {
+                    interval: d.d.heartbeat_interval,
+                    last: null,
+                    recieved: true
+                };
+
                 require('./heartbeat')(client);
 
                 socket.send(JSON.stringify({
@@ -43,7 +43,8 @@ module.exports = (client) => {
                 break;
 
             case 11: /* heartbeak ack */
-                client.ws.heartbeat.recieved = true;
+                client.ws.gateway.heartbeat.last = Date.now();
+                client.ws.gateway.heartbeat.recieved = true;
                 break;
             case 0: /* event */
                 let Events = require('../util/GatewayEvents');
@@ -53,7 +54,10 @@ module.exports = (client) => {
                     client.readyAt = Date.now();
                 }
                 
-                require('./EventsHandler')[Events[d.t]](client, d);
+                let e = require('./EventsHandler')[Events[d.t]];
+                if (e) {
+                    e(client, d);
+                }
                 break;
         }
     });

@@ -16,13 +16,13 @@ module.exports = {
         let obj = d.d;
 
         let channels = new Store();
-        for (const channel of data.d.channels) {
+        for (const channel of d.d.channels) {
             channels.set(channel.id, channel);
             client.channels.set(channel.id, channel);
         }
 
         let members = new Store();
-        for (const member of data.d.members) {
+        for (const member of d.d.members) {
             members.set(member.user.id, member.user);
             client.users.set(member.user.id, member.user);
         }

@@ -17,7 +17,8 @@ module.exports = class Client extends EventEmitter {
                 heartbeat: {
                     interval: null,
                     last: null,
-                    recieved: false
+                    recieved: false,
+                    seq: null,
                 }
             }
         };
