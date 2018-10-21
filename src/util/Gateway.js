@@ -5,9 +5,11 @@ exports.getGatewayBot = async (token) => {
 
     try {
         const { body } = await p({
-            url: '',
+            url: 'https://discordapp.com/api/gateway/bot',
             parse: 'json'
         });
+
+        
     } catch(err) {
         throw new Error(err);
     }
