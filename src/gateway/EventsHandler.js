@@ -21,15 +21,15 @@ module.exports = {
             client.channels.set(channel.id, channel);
         }
 
-        let users = new Store();
+        let members = new Store();
         for (const member of data.d.members) {
-            users.set(member.user.id, member.user);
-            client.channels.set(member.user.id, member.user);
+            members.set(member.user.id, member.user);
+            client.users.set(member.user.id, member.user);
         }
 
         if (client.guilds.has(d.d.id) && client.guilds.get(d.d.id).u == true) {
             obj.channels = channels;
-            obj.users = users;
+            obj.members = members;
 
             client.guilds.set(d.d.id, obj);
             client.emit('guildAvailable', obj);
@@ -46,5 +46,7 @@ module.exports = {
             guild: client.guilds.get(d.d.guild_id),
             channel: client.channels.get(d.d.channel_id)
         });
+
+        client.emit('messageCreate', msg);
     }
 }
