@@ -24,6 +24,7 @@ module.exports = class Client extends EventEmitter {
         this.token = token;
         this.readyAt = 0;
         this.user = null;
+        this.sessionId = null;
     }
 
     login() {

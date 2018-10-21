@@ -4,6 +4,7 @@ module.exports = {
     'ready': (client, d) => {
         client.user = d.d.user;
         client.readyAt = Date.now();
+        client.sessionId = d.d.session_id;
 
         for (const [obj] in d.d.guilds) {
             client.guilds.set(d.d.guilds[obj].id, { u: true });
