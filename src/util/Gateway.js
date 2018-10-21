@@ -9,7 +9,7 @@ exports.getGatewayBot = async (token) => {
             parse: 'json'
         });
 
-        
+        return body.url;
     } catch(err) {
         throw new Error(err);
     }

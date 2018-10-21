@@ -48,6 +48,10 @@ module.exports = (client) => {
             case 0: /* event */
                 let Events = require('../util/GatewayEvents');
                 if (!Events.hasOwnProperty(d.t)) return;
+
+                if (d.t == 'READY') {
+                    client.readyAt = Date.now();
+                }
                 
                 require('./EventsHandler')[Events[d.t]](client, d);
                 break;
