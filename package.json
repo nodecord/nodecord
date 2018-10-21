@@ -10,9 +10,16 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": [
+    "discord",
+    "api",
+    "nodecord",
+    "bot",
+    "bots",
+    "library"
+  ],
   "author": "ThatTonybo (Tony)",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "events": "^3.0.0",
     "phin": "^2.9.2"
