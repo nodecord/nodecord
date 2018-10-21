@@ -13,21 +13,21 @@ module.exports = {
     },
 
     'guildCreate': (client, d) => {
+        let obj = d.d;
+
+        let channels = new Store();
+        for (const channel of data.d.channels) {
+            channels.set(channel.id, channel);
+            client.channels.set(channel.id, channel);
+        }
+
+        let users = new Store();
+        for (const member of data.d.members) {
+            users.set(member.user.id, member.user);
+            client.channels.set(member.user.id, member.user);
+        }
+
         if (client.guilds.has(d.d.id) && client.guilds.get(d.d.id).u == true) {
-            let obj = d.d;
-
-            let channels = new Store();
-            for (const channel of data.d.channels) {
-                ch.set(channel.id, channel);
-                Client.channels.set(channel.id, channel);
-            }
-
-            let users = new Store();
-            for (const member of data.d.members) {
-                us.set(member.user.id, member.user);
-                Client.channels.set(member.user.id, member.user);
-            }
-
             obj.channels = channels;
             obj.users = users;
 
