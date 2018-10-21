@@ -34,7 +34,8 @@ module.exports = {
             client.guilds.set(d.d.id, obj);
             client.emit('guildAvailable', obj);
         } else {
-            
+            client.guilds.set(d.d.id, obj);
+            client.emit('guildCreate', obj)
         }
     }
 }
