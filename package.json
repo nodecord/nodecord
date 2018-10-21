@@ -1,0 +1,20 @@
+{
+  "name": "nodecord",
+  "version": "1.0.0",
+  "description": "A node.js API wrapper for the Discord API.",
+  "main": "src/index.js",
+  "directories": {
+    "example": "examples",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "ThatTonybo (Tony)",
+  "license": "ISC",
+  "dependencies": {
+    "events": "^3.0.0",
+    "phin": "^2.9.2"
+  }
+}
