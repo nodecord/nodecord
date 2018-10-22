@@ -3,7 +3,7 @@ const blacklisted = {
     'channel_id': true,
 };
 
-const { cleanMessage } = require('../util/MessageUtil');
+const MessageUtil = require('../util/MessageUtil');
 
 module.exports = class Message {
     constructor(obj, addons) {
@@ -11,13 +11,17 @@ module.exports = class Message {
             if (!blacklisted.hasOwnProperty(key)) this[key] = value;
         }
 
-        this.cleanedContent = cleanMessage(obj.content);
+        this.cleanedContent = MessageUtil.cleanMessage(obj.content);
         this.guild = addons.guild;
         this.channel = addons.guild;
     }
 
     async delete(timeout) {
-        // to be added
+        if (timeout && typeof (timeout) == 'number') {
+            
+        } else {
+
+        }
     }
 
     async edit(newContent) {
