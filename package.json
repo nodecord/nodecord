@@ -20,6 +20,13 @@
   ],
   "author": "ThatTonybo (Tony)",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ThatTonybo/nodecord"
+  },
+  "bugs": {
+    "url": "https://github.com/ThatTonybo/nodecord/issues"
+  },
   "dependencies": {
     "events": "^3.0.0",
     "phin": "^2.9.2",

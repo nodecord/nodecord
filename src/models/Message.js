@@ -1,12 +1,12 @@
-const blacklisted = {
-    'guild_id': true,
-    'channel_id': true,
-};
-
 const MessageUtil = require('../util/MessageUtil');
 
 module.exports = class Message {
     constructor(obj, addons) {
+        const blacklisted = {
+            'guild_id': true,
+            'channel_id': true,
+        };
+        
         for (const [key, value] of Object.entries(obj)) {
             if (!blacklisted.hasOwnProperty(key)) this[key] = value;
         }
@@ -18,7 +18,7 @@ module.exports = class Message {
 
     async delete(timeout) {
         if (timeout && typeof (timeout) == 'number') {
-            
+
         } else {
 
         }
