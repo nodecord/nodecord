@@ -1,4 +1,5 @@
 const MessageUtil = require('../util/MessageUtil');
+const Guild = require('./Guild'), TextChannel = require('./TextChannel');
 
 module.exports = class Message {
     constructor(obj, addons) {
@@ -12,8 +13,8 @@ module.exports = class Message {
         }
 
         this.cleanedContent = MessageUtil.cleanMessage(obj.content);
-        this.guild = addons.guild;
-        this.channel = addons.channel;
+        this.guild = new Guild(addons.guild);
+        this.channel = new TextChannel(addons.channel);
     }
 
     async delete(timeout) {
