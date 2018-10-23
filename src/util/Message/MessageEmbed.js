@@ -38,7 +38,7 @@ module.exports = class MessageEmbed {
         return this;
     }
 
-    timestamp(...date) {
+    timestamp(date) {
         if (!date) {
             this.timestamp = new Date();
         } else {
@@ -70,7 +70,7 @@ module.exports = class MessageEmbed {
         let icon = null;
         if (url && typeof (url) == 'string') icon = url;
 
-        this.footer = {
+        this.author = {
             name: `${str}`,
             icon_url: icon
         }
