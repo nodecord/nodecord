@@ -2,7 +2,7 @@ const EventEmitter = require('events');
 const Store = require('../util/Store');
 
 module.exports = class Client extends EventEmitter {
-    constructor(token) {
+    constructor(token, ...options) {
         super();
 
         this.guilds = new Store();
@@ -11,6 +11,7 @@ module.exports = class Client extends EventEmitter {
         
         this.ws = {
             socket: null,
+            connected: false,
             gateway: {
                 url: null,
                 obtainedAt: null,
@@ -26,14 +27,24 @@ module.exports = class Client extends EventEmitter {
         this.readyAt = 0;
         this.user = null;
         this.sessionId = null;
+
+        if (options && options.connect == false) {
+            return this;
+        } else {
+            return this.connect();
+        }
     }
 
     static get MessageEmbed() {
         return require('../util/Message/MessageEmbed');
     }
 
-    login() {
-        let attemptLogin = require('../gateway/websocket');
+    static get VERSION() { return '1.0.0'; }
+
+    connect() {
+        const attemptLogin = require('../gateway/websocket');
+        if (this.ws.connected) throw new Error(`Client is already connected to the gateway`);
+
         attemptLogin(this);
     }
 }

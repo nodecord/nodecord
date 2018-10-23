@@ -28,8 +28,19 @@ module.exports = class MessageEmbed {
         return this;
     }
 
-    field(title, value, inline) {
-        
+    field(name, value, inl) {
+        if (!name || name == '') throw new TypeError(`Message embed field names cannot be empty`);
+        if (!value || value == '') throw new TypeError(`Message embed field values cannot be empty`);
+        let inline = false;
+        if (inl && typeof (inl) == 'boolean') inline = inl;
+
+        this.fields.push({
+            name: `${name}`,
+            value: `${value}`,
+            inline: inline
+        });
+
+        return this;
     }
 
     pack() {
