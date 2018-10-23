@@ -41,6 +41,21 @@ module.exports = class MessageEmbed {
         return this;
     }
 
+    author(str, url) {
+        if (!str || str == '') throw new TypeError(`Message embed author name cannot be empty`);
+        if (str.split('').length > 256) throw new TypeError(`Message embed author name cannot be over 256 characters`);
+
+        let icon = null;
+        if (url && typeof (url) == 'string') icon = url;
+
+        this.footer = {
+            name: `${str}`,
+            icon_url: icon
+        }
+
+        return this;
+    }
+
     footer(str, url) {
         if (!str || str == '') throw new TypeError(`Message embed footer text cannot be empty`);
         if (str.split('').length > 2048) throw new TypeError(`Message embed footer text cannot be over 2048 characters`);
