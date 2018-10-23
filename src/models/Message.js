@@ -6,14 +6,14 @@ module.exports = class Message {
             'guild_id': true,
             'channel_id': true,
         };
-        
+
         for (const [key, value] of Object.entries(obj)) {
             if (!blacklisted.hasOwnProperty(key)) this[key] = value;
         }
 
         this.cleanedContent = MessageUtil.cleanMessage(obj.content);
         this.guild = addons.guild;
-        this.channel = addons.guild;
+        this.channel = addons.channel;
     }
 
     async delete(timeout) {
