@@ -1,3 +1,10 @@
+const colors = {
+    'BLUE': '#0000ff',
+    'RED': '#ff0000',
+    'YELLOW': '#ffff00',
+    'GREEN': '#00ff00',
+}
+
 module.exports = class MessageEmbed {
     constructor() {
         this.fields = [];
@@ -20,9 +27,24 @@ module.exports = class MessageEmbed {
     }
 
     color(color) {
-        if (!color || color.length == 0) throw new TypeError(`Message embed colors must be a hex code or integer`);
+        if (!color || color.length == 0) throw new TypeError(`Message embed colors must be a hex code, integer, or predefined code`);
 
-        this.color = parseInt(/[0-9A-F]{6}/i.exec(color)[0], 16);
+        if (!colors.hasOwnProperty(color)) {
+            this.color = parseInt(/[0-9A-F]{6}/i.exec(color)[0], 16);
+        } else {
+            this.color = this.color = parseInt(/[0-9A-F]{6}/i.exec(colors[color])[0], 16);
+        }
+
+        return this;
+    }
+
+    timestamp(...date) {
+        if (!date) {
+            this.timestamp = new Date();
+        } else {
+            this.timestamp = date;
+        }
+
         return this;
     }
 
