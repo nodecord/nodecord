@@ -31,8 +31,6 @@ module.exports = class TextChannel extends Channel {
         if (payload.content && payload.content.split('').length > 2000) throw new TypeError(`Message content cannot be over 2000 characters`);
 
         try {
-            console.log('sending..');
-
             const b = await p({
                 url: `https://discordapp.com/api/channels/${this.id}/messages`,
                 method: 'POST',
@@ -43,10 +41,8 @@ module.exports = class TextChannel extends Channel {
                 data: payload
             });
     
-            console.log('sent!')
             return JSON.parse(b.body);
         } catch(err) {
-            console.error('oh no error.. ' + err)
             throw new Error(err);
         }
     }
