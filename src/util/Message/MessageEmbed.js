@@ -5,7 +5,6 @@ module.exports = class MessageEmbed {
 
     title(str) {
         if (!str || str == '') throw new TypeError(`Message embed titles cannot be empty`);
-
         if (str.split('').length > 256) throw new TypeError(`Message embed titles cannot be over 256 characters`);
 
         this.title = `${str}`;
@@ -14,7 +13,6 @@ module.exports = class MessageEmbed {
 
     description(str) {
         if (!str || str == '') throw new TypeError(`Message embed descriptions cannot be empty`);
-
         if (str.split('').length > 2048) throw new TypeError(`Message embed descriptions cannot be over 2048 characters`);
 
         this.description = `${str}`;
@@ -39,6 +37,21 @@ module.exports = class MessageEmbed {
             value: `${value}`,
             inline: inline
         });
+
+        return this;
+    }
+
+    footer(str, url) {
+        if (!str || str == '') throw new TypeError(`Message embed footer text cannot be empty`);
+        if (str.split('').length > 2048) throw new TypeError(`Message embed footer text cannot be over 2048 characters`);
+
+        let icon = null;
+        if (url && typeof (url) == 'string') icon = url;
+
+        this.footer = {
+            text: `${str}`,
+            icon_url: icon
+        }
 
         return this;
     }
