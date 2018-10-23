@@ -1,4 +1,4 @@
-const MessageUtil = require('../util/MessageUtil');
+const MessageUtil = require('../util/Message/MessageUtil');
 const Guild = require('./Guild'), TextChannel = require('./TextChannel');
 
 module.exports = class Message {
