@@ -1,10 +1,11 @@
 // require the builder
 const MessageEmbed = require('../src/util/Message/MessageEmbed');
 
-// create an embed with the title 'hello world' and the hex color '#ffffff'
+// create an embed with a title, description and color
 const embed = new MessageEmbed()
 .title(`hello world`)
-.color('#ffffff')
+.description('this is an embed')
+.color('#ffffff');
 
 // log the object
 // call ".pack()" to finish the embed and pack it for use

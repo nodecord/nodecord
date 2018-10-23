@@ -1,7 +1,7 @@
 const p = require('phin').promisified;
 
 exports.getGatewayBot = async (token) => {
-    if (!token || typeof(token) != 'string' || token == '') throw new Error(`INVALID_OR_NO_TOKEN`);
+    if (!token || typeof(token) != 'string' || token == '') throw new TypeError(`The token provided must not be empty or a wrong type`);
 
     try {
         const b = await p({

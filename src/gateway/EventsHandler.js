@@ -45,7 +45,7 @@ module.exports = {
         let msg = new Message(d.d, {
             guild: client.guilds.get(d.d.guild_id),
             channel: client.channels.get(d.d.channel_id)
-        });
+        }, client);
 
         client.emit('messageCreate', msg);
     }

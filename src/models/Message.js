@@ -2,7 +2,7 @@ const MessageUtil = require('../util/Message/MessageUtil');
 const Guild = require('./Guild'), TextChannel = require('./TextChannel');
 
 module.exports = class Message {
-    constructor(obj, addons) {
+    constructor(obj, addons, client) {
         const blacklisted = {
             'guild_id': true,
             'channel_id': true,
@@ -14,7 +14,7 @@ module.exports = class Message {
 
         this.cleanedContent = MessageUtil.cleanMessage(obj.content);
         this.guild = new Guild(addons.guild);
-        this.channel = new TextChannel(addons.channel);
+        this.channel = new TextChannel(addons.channel, client);
     }
 
     async delete(timeout) {

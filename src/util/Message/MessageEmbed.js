@@ -1,12 +1,23 @@
 module.exports = class MessageEmbed {
     constructor() {
-        return;
+        this.fields = [];
     }
 
     title(str) {
         if (!str || str == '') throw new TypeError(`Message embed titles cannot be empty`);
 
+        if (str.split('').length > 256) throw new TypeError(`Message embed titles cannot be over 256 characters`);
+
         this.title = `${str}`;
+        return this;
+    }
+
+    description(str) {
+        if (!str || str == '') throw new TypeError(`Message embed descriptions cannot be empty`);
+
+        if (str.split('').length > 2048) throw new TypeError(`Message embed descriptions cannot be over 2048 characters`);
+
+        this.description = `${str}`;
         return this;
     }
 
@@ -15,6 +26,10 @@ module.exports = class MessageEmbed {
 
         this.color = parseInt(/[0-9A-F]{6}/i.exec(color)[0], 16);
         return this;
+    }
+
+    field(title, value, inline) {
+        
     }
 
     pack() {

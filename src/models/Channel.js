@@ -1,8 +1,10 @@
 module.exports = class Channel {
-    constructor(obj) {
+    constructor(obj, client) {
         for (const [key, value] of Object.entries(obj)) {
             this[key] = value;
         }
+
+        this.client = client;
 
         switch(this.type) {
             case 0: this.type = 'text'; break;

@@ -28,6 +28,10 @@ module.exports = class Client extends EventEmitter {
         this.sessionId = null;
     }
 
+    static get MessageEmbed() {
+        return require('../util/Message/MessageEmbed');
+    }
+
     login() {
         let attemptLogin = require('../gateway/websocket');
         attemptLogin(this);
