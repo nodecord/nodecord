@@ -6,9 +6,7 @@ const colors = {
 }
 
 module.exports = class MessageEmbed {
-    constructor() {
-        this.fields = [];
-    }
+    constructor() { this.fields = []; }
 
     title(str) {
         if (!str || str == '') throw new TypeError(`Message embed titles cannot be empty`);
