@@ -5,10 +5,10 @@ module.exports = class Message {
     constructor(obj, addons, client) {
         this.id = obj.id;
         if (obj.webhook_id) {
-            this.author = new WebhookUser();
+            this.author = msg.webhook_id;
         } else {
-            this.author = new User();
-            this.member = new GuildMember();
+            this.author = msg.author;
+            this.member = msg.member;
         }
         this.content = obj.content;
         this.cleaned = MessageUtil.cleanMessage(obj.content);
@@ -32,7 +32,7 @@ module.exports = class Message {
         }
     }
 
-    async edit(newContent) {
-        // to be added
+    async edit(str) {
+        
     }
 }
