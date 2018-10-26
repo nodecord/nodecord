@@ -93,6 +93,20 @@ module.exports = class MessageEmbed {
         return this;
     }
 
+    image(url) {
+        if (!url || url == '') throw new TypeError(`Message embed image URL is required`);
+
+        this.image = { url: url };
+        return this;
+    }
+
+    thumbnail(url) {
+        if (!url || url == '') throw new TypeError(`Message embed thumbnail URL is required`);
+
+        this.thumbnail = { url: url };
+        return this;
+    }
+
     pack() {
         let Embed = new Object();
 

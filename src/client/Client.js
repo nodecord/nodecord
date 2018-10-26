@@ -39,7 +39,7 @@ module.exports = class Client extends EventEmitter {
         return require('../util/Message/MessageEmbed');
     }
 
-    static get VERSION() { return '1.0.0'; }
+    static get VERSION() { return '1.0.1'; }
 
     connect() {
         const attemptLogin = require('../gateway/websocket');
