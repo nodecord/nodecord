@@ -5,10 +5,10 @@ module.exports = class Message {
     constructor(obj, addons, client) {
         this.id = obj.id;
         if (obj.webhook_id) {
-            this.author = msg.webhook_id;
+            this.author = obj.webhook_id;
         } else {
-            this.author = msg.author;
-            this.member = msg.member;
+            this.author = obj.author;
+            this.member = obj.member;
         }
         this.content = obj.content;
         this.cleaned = MessageUtil.cleanMessage(obj.content);
