@@ -39,7 +39,7 @@ module.exports = {
         }
     },
 
-    'messageCreate': (client, d) => {
+    'message': (client, d) => {
         let Message = require('../models/Message');
 
         let msg = new Message(d.d, {
@@ -47,6 +47,6 @@ module.exports = {
             channel: client.channels.get(d.d.channel_id)
         }, client);
 
-        client.emit('messageCreate', msg);
+        client.emit('message', msg);
     }
 }
