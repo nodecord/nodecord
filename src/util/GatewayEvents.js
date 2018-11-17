@@ -1,6 +1,6 @@
 module.exports = {
     'READY': 'ready',
-    'MESSAGE_CREATE': 'messageCreate',
+    'MESSAGE_CREATE': 'message',
     'MESSAGE_UPDATE': 'messageUpdate',
     'MESSAGE_DELETE': 'messageDelete',
     'MESSAGE_DELETE_BULK': 'messageBulkDelete',
