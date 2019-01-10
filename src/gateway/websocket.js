@@ -14,7 +14,7 @@ module.exports = async (client) => {
         const d = JSON.parse(incoming) || incoming;
 
         switch(d.op) {
-            case 10: /* hello */
+            case 10:
                 client.ws.gateway.heartbeat = {
                     interval: d.d.heartbeat_interval,
                     last: null,
@@ -42,22 +42,19 @@ module.exports = async (client) => {
                 }));
                 break;
 
-            case 11: /* heartbeak ack */
+            case 11:
                 client.ws.gateway.heartbeat.last = Date.now();
                 client.ws.gateway.heartbeat.recieved = true;
                 break;
-            case 0: /* event */
-                let Events = require('../util/GatewayEvents');
+
+            case 0:
+                const Events = require('../util/GatewayEvents');
                 if (!Events.hasOwnProperty(d.t)) return;
 
-                if (d.t == 'READY') {
-                    client.readyAt = Date.now();
-                }
+                if (d.t == 'READY') client.readyAt = Date.now();
                 
-                let e = require('./EventsHandler')[Events[d.t]];
-                if (e) {
-                    e(client, d);
-                }
+                const e = require('./EventsHandler')[Events[d.t]];
+                if (e) e(client, d);
                 break;
         }
     });

@@ -1,7 +1,9 @@
 const p = require('phin').promisified;
 
 module.exports = async (client) => {
+    // TODO: Don't terminate
     if (client.ws.gateway.heartbeat.recieved == false) throw new Error(`Last heartbeat hasn't been acknowledged, terminating connection`);
+
     setInterval(() => {
         client.ws.socket.send(JSON.stringify({
             op: 1,

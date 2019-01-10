@@ -23,10 +23,11 @@ module.exports = class Client extends EventEmitter {
                 }
             }
         };
-        Object.defineProperty(this, "token", { value: token });
+
+        this.token = token;
         this.readyAt = 0;
         this.user = null;
-        this.sessionId = null;
+        this.sessionID = null;
 
         if (options && options.connect == false) {
             return this;
@@ -43,7 +44,7 @@ module.exports = class Client extends EventEmitter {
 
     connect() {
         const attemptLogin = require('../gateway/websocket');
-        if (this.ws.connected) throw new Error(`Client is already connected to the gateway`);
+        if (this.ws.connected) throw new Error(`The client is already connected to the gateway`);
 
         attemptLogin(this);
     }

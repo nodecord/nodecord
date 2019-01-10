@@ -1,44 +1,4 @@
-module.exports.gatewayOps = {
-    DISPATCH: 0,
-    HEARTBEAT: 1,
-    IDENTIFY: 2,
-    STATUS_UPDATE: 3,
-    VOICE_STATE_UPDATE: 4,
-    VOICE_SERVER_PING: 5,
-    RESUME: 6,
-    RECONNECT: 7,
-    REQUEST_GUILD_MEMBERS: 8,
-    INVALID_SESSION: 9,
-    HELLO: 10,
-    HEARTBEAT_ACK: 11
-};
-
-module.exports.regions = [
-    "eu-central",
-    "japan",
-    "brazil",
-    "us-west",
-    "hongkong",
-    "southafrica",
-    "sydney",
-    "singapore",
-    "us-central",
-    "eu-west",
-    "us-south",
-    "us-east",
-    "russia"
-];
-
-module.exports.levels = {
-    message: [0, 1, "ALL_MESSAGES", "ONLY_MENTIONS"],
-    verification: [0, 1, 2, 3, 4, "NONE", "LOW", "MEDIUM", "HIGH", "VERY_HIGH"]
-};
-
-module.exports.userAgent = `DiscordBot (https://github.com/nodecord/nodecord, ${require("../../package.json").version})`;
-
-module.exports.baseUrl = "https://discordapp.com/api/v6";
-
-let PERMISSIONS = {
+const PERMISSIONS = {
     CREATE_INSTANT_INVITE: 0x00000001,
     KICK_MEMBERS: 0x00000002,
     BAN_MEMBERS: 0x00000004,
@@ -68,6 +28,46 @@ let PERMISSIONS = {
     MANAGE_WEBHOOKS: 0x20000000,
     MANAGE_EMOJIS: 0x40000000
 };
-let arr = Object.values(PERMISSIONS);
+
+const arr = Object.values(PERMISSIONS);
 PERMISSIONS.ALL = arr.reduce((x, y) => x | y);
-module.exports.PERMISSIONS = PERMISSIONS;
+
+module.exports = {
+    baseURL: 'https://discordapp.com/api/v7',
+    UserAgent: `Discord-Bot (https://github.com/nodecord/nodecord, ${require('../../package.json').version})`,
+    guildSettings: {
+        messageNotifications: [0, 1, 'ALL_MESSAGES', 'ONLY_MENTIONS'],
+        verificationLevel: [0, 1, 2, 3, 4, 'NONE', 'LOW', 'MEDIUM', 'HIGH', 'VERY_HIGH'],
+        explicitContentFilter: []
+    },
+    voiceRegions: [
+        'brazil',
+        'eu-central',
+        'eu-west',
+        'hongkong',
+        'japan',
+        'russia',
+        'singapore',
+        'southafrica',
+        'sydney',
+        'us-central',
+        'us-east',
+        'us-south',
+        'us-west'
+    ],
+    OPCodes: {
+        DISPATCH: 0,
+        HEARTBEAT: 1,
+        IDENTIFY: 2,
+        STATUS_UPDATE: 3,
+        VOICE_STATE_UPDATE: 4,
+        VOICE_SERVER_PING: 5,
+        RESUME: 6,
+        RECONNECT: 7,
+        REQUEST_GUILD_MEMBERS: 8,
+        INVALID_SESSION: 9,
+        HELLO: 10,
+        HEARTBEAT_ACK: 11
+    },
+    permissions: PERMISSIONS
+}
