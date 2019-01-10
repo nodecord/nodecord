@@ -26,7 +26,9 @@ module.exports = class Message {
 
     async delete(timeout) {
         if (timeout && typeof (timeout) == 'number') {
-
+            setTimeout(() => {
+                
+            });
         } else {
 
         }

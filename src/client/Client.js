@@ -23,7 +23,7 @@ module.exports = class Client extends EventEmitter {
                 }
             }
         };
-        this.token = token;
+        Object.defineProperty(this, "token", { value: token });
         this.readyAt = 0;
         this.user = null;
         this.sessionId = null;
