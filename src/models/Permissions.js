@@ -1,4 +1,4 @@
-const { PERMISSIONS } = require("../utils/Constants.js");
+const { PERMISSIONS } = require("../util/Constants.js");
 
 /**
  * Represents a members/roles current permissions.
