@@ -1,5 +1,6 @@
 const EventEmitter = require('events');
 const Store = require('../util/Store');
+const RESTHandler = require("../util/Requests/RESTHandler.js");
 
 module.exports = class Client extends EventEmitter {
     constructor(token, ...options) {
@@ -28,6 +29,7 @@ module.exports = class Client extends EventEmitter {
         this.readyAt = 0;
         this.user = null;
         this.sessionID = null;
+        this.rest = new RESTHandler(this);
 
         if (options && options.connect == false) {
             return this;

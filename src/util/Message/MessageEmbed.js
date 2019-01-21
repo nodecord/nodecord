@@ -106,12 +106,9 @@ module.exports = class MessageEmbed {
     }
 
     pack() {
-        let Embed = new Object();
-
-        for (const [key, value] of Object.entries(this)) {
-            Embed[key] = value;
-        }
-
-        return Embed;
+        let packed = {};
+        for (const [key, value] of Object.entries(this)) packed[key] = value;
+        return packed;
     }
+
 }
