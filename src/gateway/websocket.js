@@ -10,6 +10,7 @@ module.exports = async (client) => {
 
     const socket = new ws(`${gatewayUrl}/?v=7&encoding=json`);
     client.ws.socket = socket;
+    
     socket.on('message', (incoming) => {
         const d = JSON.parse(incoming) || incoming;
 
