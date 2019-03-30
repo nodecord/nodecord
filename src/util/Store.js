@@ -5,10 +5,10 @@ module.exports = class Store extends Map {
 
     /**
      * Returns an array of keys.
-     * @returns {Array}
+     * @returns {Array<any>}
      */
     toKeyArray() {
-        return this.keys();
+        return [...this.keys()];
     }
 
     /**
@@ -16,7 +16,7 @@ module.exports = class Store extends Map {
      * @returns {Array<any>}
      */
     toValueArray() {
-        return this.values();
+        return [...this.values()];
     }
 
     /**
