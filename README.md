@@ -16,4 +16,4 @@ A general rule is to follow the existing style of code already in the repository
 ## Licence
 (c) 2018 - 2019 ThatTonybo. Licenced under the MIT Licence, see the LICENCE file for more information.
 
-For quick verification, ThatTonybo#ooo1.
+For quick verification, ThatTonybo#0001.
