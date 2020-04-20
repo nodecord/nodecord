@@ -1,6 +1,6 @@
 {
   "name": "nodecord",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "A node.js wrapper for the Discord API",
   "main": "src/index.js",
   "directories": {
