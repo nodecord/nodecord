@@ -29,7 +29,11 @@
     "url": "https://github.com/ThatTonybo/nodecord/issues"
   },
   "dependencies": {
-    "ws": "^6.2.0",
-    "phin": "3.2.4"
+    "events": "^3.1.0",
+    "phin": "github:nodecord/requests",
+    "ws": "^7.2.3"
+  },
+  "optionalDependencies": {
+    "eventemitter3": "^4.0.0"
   }
 }
