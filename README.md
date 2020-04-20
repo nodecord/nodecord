@@ -10,15 +10,15 @@
 ## Nodecord
 A lightweight node.js wrapper for the Discord API
 
+> Hello there! You're looking at the `dev` branch of Nodecord, which at the moment is the home of an entire rewrite. Expect everything here to be unstable and absolutely unintended for production use - you have been warned!
+
 ### Install
 ```
 npm install nodecord
 ```
 
 ### Contributing
-[Join our server](https://discord.gg/BUGV4Er) to discuss, if you'd like.  
-
 Contribution guidelines will be published soon.
 
-## Licence
+### Licence
 (c) 2018 - 2020 Nodecord, created by ThatTonybo. Licenced under the GNU GPL v3.0 License, see the [LICENSE](./LICENSE) file for more information.
