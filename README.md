@@ -1,17 +1,24 @@
-[![Discord](https://discordapp.com/api/guilds/503134449060544513/embed.png?style=shield)](https://discord.gg/BUGV4Er)  
-# Nodecord
-A node.js API wrapper for the Discord API.
+<div align="center">
+    <p>
+        <img src="https://i.imgur.com/BcLSzhy.png" width="276" />
+    </p>
+    <p>
+        <a href="https://discord.gg/BUGV4Er"><img src="https://discordapp.com/api/guilds/503134449060544513/embed.png?style=shield" /></a>
+    </p>
+</div>
 
-## Install
-Nodecord can be installed through npm, provided a recent version of node.js is available.
+## Nodecord
+A lightweight node.js wrapper for the Discord API
+
+### Install
 ```
 npm install nodecord
 ```
 
-## Contributing
-Contributions are appreciated! Feel free to fork/clone and create a pull request for any changes made, or create an issue to further discuss minor/major/breaking changes. You can also [join our server](https://discord.gg/BUGV4Er) to discuss, if you'd like.  
+### Contributing
+[Join our server](https://discord.gg/BUGV4Er) to discuss, if you'd like.  
 
-A general rule is to follow the existing style of code already in the repository, which includes using single quotes `'` and minimal compacting.
+Contribution guidelines will be published soon.
 
 ## Licence
-(c) 2018 - 2019 ThatTonybo. Licenced under the MIT Licence, see the LICENCE file for more information.
+(c) 2018 - 2020 Nodecord, created by ThatTonybo. Licenced under the GNU GPL v3.0 License, see the [LICENSE](./LICENSE) file for more information.
