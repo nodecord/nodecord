@@ -1,3 +1,6 @@
+#folders we don't want of course
 node_modules/
 out/
+
+#for developer use only
 tests/Bot.js
