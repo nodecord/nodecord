@@ -1,7 +1,9 @@
 # Contributing to Nodecord
-The following is a set of guidelines for contributing to any parts of Nodecord, and are meant as a guide towards what we expect in contributions, not specific rules. Use your own judgement on what you think would fit best, and get going.
+Hello! First off, thank you for wanting to contribute.
 
-## Table of contents
+The following is a set of guidelines for contributing to any parts of Nodecord. It's goal is to guide you in the right way for any sort of contribution, code-side or when dealing with bug reports or anything else. All content is meant as a guide towards what we expect in contributions, not specific rules. Use your own judgement on what you think would fit best, and get going.
+
+### Table of contents
 [How can I contribute?](#how-can-i-countribute)
 * [Reporting Bugs](#reporting-bugs)
   * [Before you submit a bug report](#before-you-submit-a-bug-report)
@@ -60,11 +62,11 @@ Submitting suggestions is even easier than bug reports, as you only need to prov
 * Features provided in node.js v12 are preferred over any others, as that is the minimum version required for Nodecord.
 * Use of ES6 and promises is **required**, usage of code like `function () {}` and callbacks will be denied.
 
-## Readability
+### Readability
 * Compacting code is not preferred, and it is advised you keep code open and readable where possible.
   * Single line functions are great if the function in question is not complex or only requires one/no argument(s).
 
-## Variables and Configuration
+### Variables and Configuration
 * Hard coding variables in files is strongly discouraged.
   * For variables that most likely won't change, whether they're needed in one or more file(s), they should be defined in the Constants file, found in `/lib/util/Constants.js`
   * If possible in the context being worked in, providng a way to configure an option is preferred over hard coding it, for example allowing the user to set an avatar size but having a default of 128x, instead of hard coding and forcing a size of 128x.
@@ -73,5 +75,5 @@ If you have any suggestions for the styleguide, please open a blank issue relate
 
 # Notes
 
-## Managing issues
+### Managing issues
 * Attach appropriate labels where you feel necessary. Labels provide a faster and efficient way to find and manage open or past issues, so only add appropriate labels if you feel it would benefit from them.
