@@ -1,0 +1,20 @@
+{
+    "source": {
+        "exclude": [
+            "./lib/util/Requests/RESTHandler",
+            "./lib/gateway/EventHandler",
+            "./lib/gateway/Gateway"
+        ]
+    },
+    "beautify": true,
+    "components": {
+        "summary": true
+    },
+    "sourceFiles": {
+        "generate": true,
+        "singleLink": true
+    },
+    "tables": {
+        "nestedPropertyTables": true
+    }
+}

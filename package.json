@@ -9,6 +9,7 @@
     "lib": "src"
   },
   "scripts": {
+    "docs": "jsdoc -r -c ./jsdoc.json -t ./node_modules/jsdoc-baseline ./lib",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -37,5 +38,9 @@
   },
   "optionalDependencies": {
     "eventemitter3": "^4.0.0"
+  },
+  "devDependencies": {
+    "jsdoc": "^3.6.4",
+    "jsdoc-baseline": "^0.1.5"
   }
 }
