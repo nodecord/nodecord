@@ -41,6 +41,6 @@
   },
   "devDependencies": {
     "jsdoc": "^3.6.4",
-    "jsdoc-baseline": "^0.1.5"
+    "jsdoc-baseline": "github:nodecord/jsdoc-baseline"
   }
 }

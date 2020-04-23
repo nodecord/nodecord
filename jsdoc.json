@@ -6,6 +6,15 @@
             "./lib/gateway/Gateway"
         ]
     },
+    "templates": {
+        "default": {
+            "staticFiles": {
+                "include": [
+                    "./assets/logo-transparent-2.png"
+                ]
+            }
+        }
+    },
     "beautify": true,
     "components": {
         "summary": true
