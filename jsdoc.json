@@ -7,7 +7,7 @@
         ]
     },
     "templates": {
-        "default": {
+        "jsdoc-baseline": {
             "staticFiles": {
                 "include": [
                     "./assets/logo-transparent-2.png"
