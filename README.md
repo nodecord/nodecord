@@ -3,7 +3,7 @@
         <img src="https://i.imgur.com/BcLSzhy.png" width="276" />
     </p>
     <p>
-        <a href="https://discord.gg/BUGV4Er"><img src="https://discordapp.com/api/guilds/503134449060544513/embed.png?style=shield" /></a>
+        <a href="https://discord.gg/6kG3y3E"><img src="https://discordapp.com/api/guilds/503134449060544513/embed.png?style=shield" /></a>
     </p>
 </div>
 

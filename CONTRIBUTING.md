@@ -71,7 +71,7 @@ Submitting suggestions is even easier than bug reports, as you only need to prov
   * For variables that most likely won't change, whether they're needed in one or more file(s), they should be defined in the Constants file, found in `/lib/util/Constants.js`
   * If possible in the context being worked in, providng a way to configure an option is preferred over hard coding it, for example allowing the user to set an avatar size but having a default of 128x, instead of hard coding and forcing a size of 128x.
 
-If you have any suggestions for the styleguide, please open a blank issue related to Contribution Guidelines and discuss them with us, or ask on our [Discord server](https://discord.gg/BUGV4Er).
+If you have any suggestions for the styleguide, please open a blank issue related to Contribution Guidelines and discuss them with us, or ask on our [Discord server](https://discord.gg/6kG3y3E).
 
 # Notes
 
