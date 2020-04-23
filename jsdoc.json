@@ -1,13 +1,9 @@
 {
     "source": {
-        "exclude": [
-            "./lib/util/Requests/RESTHandler",
-            "./lib/gateway/EventHandler",
-            "./lib/gateway/Gateway"
-        ]
+        "exclude": []
     },
     "templates": {
-        "jsdoc-baseline": {
+        "default": {
             "staticFiles": {
                 "include": [
                     "./assets/logo-transparent-2.png"
