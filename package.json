@@ -9,7 +9,7 @@
     "lib": "src"
   },
   "scripts": {
-    "docs": "jsdoc -r -c ./jsdoc.json -t ./node_modules/jsdoc-baseline ./lib",
+    "docs": "jsdoc ./lib -r -c ./jsdoc.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
