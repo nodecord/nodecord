@@ -24,10 +24,10 @@
   "license": "GPL-3.0-or-later",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ThatTonybo/nodecord"
+    "url": "https://github.com/nodecord/nodecord"
   },
   "bugs": {
-    "url": "https://github.com/ThatTonybo/nodecord/issues"
+    "url": "https://github.com/nodecord/nodecord/issues"
   },
   "dependencies": {
     "events": "^3.1.0",
