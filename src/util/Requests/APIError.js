@@ -1,7 +1,6 @@
 class APIError {
 
     constructor(message, endpoint, method, code, data, options) {
-        super(message);
         this.name = "APIError";
         this.error = "APIError";
         this.endpoint = endpoint;
